@@ -28,10 +28,12 @@
              <h2>
                 Zapotrzebowanie na farbę
              </h2>
-             <form>
+             
                 <label for="powierzchnia">Powierzchnia malowania (m<sup>2</sup>): </label>
                 <input type="text" name="powierzchnia" id="powierzchnia">
-             </form>
+                <button id="policz">Policz</button>
+                <p id="result"></p>
+             
             </article>
         </section>
         <section id="right">
@@ -44,5 +46,13 @@
         <h3>MALARZ</h3>
         <p>Stronę opracował: 03928384823</p>
     </footer>
+    <script>
+        function policz(){
+            let pow = Number(document.getElementById("powierzchnia").value);
+        pow = pow/4
+        document.getElementById("result").innerHTML = `Liczba potrzebnych puszek: ${Math.ceil(pow)}.`;
+        }
+        document.getElementById("policz").addEventListener('click',policz);
+    </script>
 </body>
 </html>
